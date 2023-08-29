@@ -15,12 +15,12 @@ resource "aws_instance" "example_instance" {
   ami           = "ami-051f7e7f6c2f40dc1" 
   instance_type = "t3.micro" 
 
-  subnet_id = "subnet-0123456789abcdef0" 
+  subnet_id = "subnet-8f6a9ec4" 
 
   # Security group IDs for your instance
-  vpc_security_group_ids = ["sg-0123456789abcdef0"]
+  vpc_security_group_ids = ["sg-042974940cbae1ab6"]
 
-  key_name = "your-key-pair" # Replace with your key pair name
+  key_name = "scm" # Replace with your key pair name
 
   tags = {
     Name = "SCM-Web-Svr"
