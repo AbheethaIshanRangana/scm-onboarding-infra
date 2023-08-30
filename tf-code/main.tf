@@ -23,10 +23,12 @@ resource "aws_instance" "example_instance" {
   key_name = "scm" # Replace with your key pair name
 
   user_data = <<EOF
-    #!/bin/bash
-    echo "yum repolist"
-    yum install httpd -y
-  EOF
+
+#!/bin/bash
+echo "Install HTTPD"
+sudo yum install httpd -y && sudo systemctl enable httpd.service && sudo systemctl start httpd.service 
+
+EOF
 
   tags = {
     Name = "SCM-Web-Svr"
