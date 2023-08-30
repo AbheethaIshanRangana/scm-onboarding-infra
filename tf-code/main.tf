@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example_instance" {
-  ami           = "ami-051f7e7f6c2f40dc1" 
+  ami           = "ami-053b0d53c279acc90" 
   instance_type = "t3.micro" 
 
   subnet_id = "subnet-8f6a9ec4" 
@@ -25,8 +25,12 @@ resource "aws_instance" "example_instance" {
   user_data = <<EOF
 
 #!/bin/bash
-echo "Install HTTPD"
-sudo dnf install httpd -y && sudo systemctl enable httpd.service && sudo systemctl start httpd.service 
+sudo apt update
+sudo apt install apache2 -y
+sudo systemctl enable apache2
+sudo systemctl start apache2
+sudo ufw allow 'Apache'
+sudo systemctl status apache2
 
 EOF
 
