@@ -26,7 +26,7 @@ resource "aws_instance" "example_instance" {
 
 #!/bin/bash
 echo "Install HTTPD"
-sudo yum install httpd -y && sudo systemctl enable httpd.service && sudo systemctl start httpd.service 
+sudo dnf install httpd -y && sudo systemctl enable httpd.service && sudo systemctl start httpd.service 
 
 EOF
 
