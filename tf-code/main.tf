@@ -21,6 +21,7 @@ resource "aws_instance" "web_instance" {
               systemctl start apache2
               systemctl enable apache2
               echo "<html><h1>Hello from your EC2 instance</h1></html>" > /var/www/html/index.html
+              apt install -y awscli
               EOF
 
   tags = {
