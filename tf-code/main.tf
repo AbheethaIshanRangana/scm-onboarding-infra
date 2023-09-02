@@ -28,7 +28,7 @@ resource "aws_instance" "web_instance" {
     Name = "SCM-Web-Svr"
   }
 
-  iam_instance_profile = ""
+  iam_instance_profile = "scm_ec2_profile"
 }
 
 resource "aws_iam_instance_profile" "scm_ec2_profile" {
