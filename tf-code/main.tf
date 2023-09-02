@@ -37,7 +37,7 @@ resource "aws_iam_instance_profile" "scm_ec2_profile" {
 }
 
 resource "aws_iam_role" "scm_role" {
-  name = scm_role
+  name = "scm_role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [{
