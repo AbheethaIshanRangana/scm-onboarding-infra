@@ -61,11 +61,6 @@ resource "aws_iam_policy" "s3_full_access_policy" {
         Action   = "s3:*",
         Effect   = "Allow",
         Resource = "*"
-      },
-      {
-        Action   = "*",
-        Effect   = "Deny",
-        Resource = "*"
       }
     ]
   })
