@@ -8,11 +8,11 @@ terraform {
 }
 
 resource "aws_instance" "web_instance" {
-  ami                     = "ami-053b0d53c279acc90" # Use the AMI ID for Ubuntu 20.04 in your desired region
-  instance_type           = "t3.micro"             # Change this to your desired instance type
+  ami                     = "ami-053b0d53c279acc90"
+  instance_type           = "t3.micro"
   subnet_id               = "subnet-8f6a9ec4" 
   vpc_security_group_ids  = ["sg-042974940cbae1ab6"]
-  key_name                = "scm"   # Change this to your SSH key pair name
+  key_name                = "scm"
 
   user_data = <<-EOF
               #!/bin/bash
